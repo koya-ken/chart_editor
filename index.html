@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>chart editor</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="kanban-container">
+        <div id='test' class="kanban-item">
+            test
+        </div>
+        <div class="kanban-item">
+            test
+        </div>
+    </div>
+</body>
+
+<script>
+    const _kanban = new kanban('kanban-container');
+    const elem = document.getElementById('test')
+    _kanban.initializeElement(elem);
+</script>
+
+</html>

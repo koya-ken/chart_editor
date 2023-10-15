@@ -1,11 +1,16 @@
 :root {
     --color-item-primary: aqua;
+    --color-container-primary: azure;
 }
 
 .kanban-container {
     position: relative;
     box-sizing: border-box;
     width: auto;
+    background-color: var(--color-container-primary);
+    min-height: 200px;
+    max-width: 400px;
+    gap: 10px;
 }
 
 .kanban-container * {
@@ -16,10 +21,29 @@
     margin-bottom: 5px;
     min-width: 360px;
     max-width: 360px;
-    min-height: 40px;
+    height: 40px;
+    /*
+    https://stackoverflow.com/questions/8865458/how-do-i-vertically-center-text-with-css
+    */
+    line-height: 40px;
     background-color: var(--color-item-primary);
     user-select: none;
+    margin: 0 auto;
+    padding-left: 10px;
+    vertical-align: middle;
 }
+
+/*
+https://stackoverflow.com/questions/11903773/add-space-between-li-elements
+*/
+.kanban-item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.kanban-item:hover {
+    cursor: move;
+}
+
 
 .kanban-container:after {
     clear: both;
@@ -38,11 +62,5 @@
     position: fixed !important;
     margin: 0 !important;
     z-index: 9999 !important;
-    /**
-    https: //stackoverflow.com/questions/4919963/css3-transform-not-working
-    */
-    -webkit-transform: rotate(2deg);
-    -moz-transform: rotate(2deg);
-    -o-transform: rotate(2deg);
     transform: rotate(2deg);
 }

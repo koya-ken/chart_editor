@@ -10,19 +10,23 @@
 
 <body>
     <div class="kanban-container">
-        <div id='test' class="kanban-item">
-            test
+        <div class="kanban-item">
+            test1
         </div>
         <div class="kanban-item">
-            test
+            test2
+        </div>
+        <div class="kanban-item">
+            test3
         </div>
     </div>
 </body>
 
 <script>
     const _kanban = new kanban('kanban-container');
-    const elem = document.getElementById('test')
-    _kanban.initializeElement(elem);
+    document.querySelectorAll('.kanban-container *').forEach(element => {
+        _kanban.initializeElement(element);
+    });
 </script>
 
 </html>
